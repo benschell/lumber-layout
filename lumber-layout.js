@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var path = require('path');
 var math = require('mathjs');
 var input = require(path.resolve(process.argv[2]));
