@@ -1,8 +1,8 @@
 {
-  "name": "plywood-layout",
+  "name": "lumber-layout",
   "version": "1.0.0",
   "description": "",
-  "main": "lumber-layout.js",
+  "bin": "./lumber-layout.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

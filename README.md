@@ -4,16 +4,30 @@ A node.js-based tool for laying out lumber.
 
 ## Usage
 
+Install via `npm`:
+
+```sh
+npm install -g lumber-layout
+```
+
+Then, run the program like this:
+
+```sh
+lumber-layout input-file.json
+```
+
+## Install from Source
+
 Clone the repo, then install dependencies:
 
 ```sh
 npm install
 ```
 
-Then, run the program like this:
+Then run locally, e.g.:
 
 ```sh
-./lumber-layout.js samples/play-kitchen-8x4.json
+./lumber-layout.sh samples/play-kitchen-8x4.json
 ```
 
 ## Input
