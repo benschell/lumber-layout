@@ -46,19 +46,24 @@ for(var i=0; i<thicknesses.length; i++){
     sheets[tness] = parseDimensions(input.sheets[tness]);
 }
 
-var pieces = {};
-var cuts = Object.keys(input.cuts);
-for(var i=0; i<cuts.length; i++){
+var pieces = {},
+    cuts = Object.keys(input.cuts),
+    i, j;
+for(i=0; i<cuts.length; i++){
     var cut = cuts[i],
         cutd = parseDimensions(cut);
     if(!pieces[cutd.thicknessStr]){
         pieces[cutd.thicknessStr] = [];
     }
-    pieces[cutd.thicknessStr].push(cutd);
+    for(j=0; j<input.cuts[cuts[i]]; j++){
+        pieces[cutd.thicknessStr].push(cutd);
+    }
 }
 
 var simpleStripPack = require('./algs/simple-strip-pack');
-for(var i=0; i<thicknesses.length; i++){
+var twoPhaseStripPack = require('./algs/2-phase-strip-pack');
+for(i=0; i<thicknesses.length; i++){
     var tness = thicknesses[i];
     simpleStripPack(cloneDimensions(pieces[tness]), sheets[tness], outputDir);
+    twoPhaseStripPack(cloneDimensions(pieces[tness]), sheets[tness], outputDir);
 }
